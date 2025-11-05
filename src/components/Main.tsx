@@ -7,7 +7,7 @@ export const Main = () => {
         <img className="w-[212px] " src="./src/assets/img/react.svg" alt="" />
       </div>
       <div>
-        <button className="rounded-2xl border-2 border-[#222] text-[#222] p-2 tracking-widest hover:bg-[#222] hover:text-white">
+        <button className="rounded-2xl border-2 border-[#222] text-[#222] p-2 tracking-[8px] hover:bg-[#222] hover:text-white">
           Toggle Menu
         </button>
       </div>
