@@ -1,8 +1,13 @@
 import { create } from "zustand";
 
-const useBear = create((set) => ({
-  bears: 0,
-  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
-  updateBears: (newBears) => set({ bears: newBears }),
+type offcanvasT = {
+  open: boolean;
+  Toggle: () => void;
+  close: () => void;
+};
+
+export const useOffcanvas = create<offcanvasT>()((set) => ({
+  open: false,
+  Toggle: () => set((previous) => ({ open: !previous.open })),
+  close: () => set(() => ({ open: false })),
 }));

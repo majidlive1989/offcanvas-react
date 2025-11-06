@@ -1,6 +1,8 @@
 import React from "react";
+import { useOffcanvas } from "../store/store";
 
-export const Header = () => {
+const Header = () => {
+  const { Toggle } = useOffcanvas();
   return (
     <div className="flex flex-row justify-between p-9 w-full ">
       <div>
@@ -8,6 +10,7 @@ export const Header = () => {
       </div>
       <div>
         <svg
+          onClick={Toggle}
           fill="#49a6e9"
           width="50px"
           height="50px"
@@ -25,3 +28,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default Header;

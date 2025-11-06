@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 import "./App.css";
-import { Header } from "./components/Header";
-import { Main } from "./components/Main";
-import { Offcanvas } from "./components/Offcanvas";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Offcanvas from "./components/Offcanvas";
 
 function App() {
   return (
-    <div className="h-full flex">
+    <div>
       <Header />
       <Main />
       <Offcanvas />
