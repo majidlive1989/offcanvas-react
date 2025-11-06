@@ -1,12 +1,17 @@
-import React from "react";
 import { useOffcanvas } from "../store/store";
+import clsx from "clsx";
 
 const Offcanvas = () => {
-  const { open, close } = useOffcanvas();
+  const { open, setOpen } = useOffcanvas();
   return (
     <div
-      onClick={() => {}}
-      className="flex flex-col w-[30%] h-full p-3 gap-6 bg-white fixed top-0 left-0 z-10"
+      className={clsx(
+        "flex flex-col w-[30%] h-full p-3 gap-6 bg-white fixed top-0 transition-all duration-1000 z-10 ",
+        {
+          "-left-full ": !open,
+          "left-0": open,
+        }
+      )}
     >
       <div className="flex flex-row justify-between p-3">
         <div>
@@ -14,7 +19,7 @@ const Offcanvas = () => {
         </div>
         <div>
           <svg
-            onClick={close}
+            onClick={() => setOpen(false)}
             fill="#bb2525"
             width="40px"
             height="40px"

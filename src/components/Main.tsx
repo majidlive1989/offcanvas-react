@@ -2,7 +2,7 @@ import React from "react";
 import { useOffcanvas } from "../store/store";
 
 const Main = () => {
-  const { Toggle } = useOffcanvas();
+  const { open, setOpen } = useOffcanvas();
   return (
     <div className="flex flex-col justify-center items-center p-8 gap-7">
       <div>
@@ -10,7 +10,7 @@ const Main = () => {
       </div>
       <div>
         <button
-          onClick={Toggle}
+          onClick={() => setOpen(open === true ? false : true)}
           className="rounded-2xl border-2 border-[#222] text-[#222] p-2 tracking-[8px] hover:bg-[#222] hover:text-white"
         >
           Toggle Menu

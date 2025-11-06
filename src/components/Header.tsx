@@ -2,7 +2,7 @@ import React from "react";
 import { useOffcanvas } from "../store/store";
 
 const Header = () => {
-  const { Toggle } = useOffcanvas();
+  const { open, setOpen } = useOffcanvas();
   return (
     <div className="flex flex-row justify-between p-9 w-full ">
       <div>
@@ -10,13 +10,12 @@ const Header = () => {
       </div>
       <div>
         <svg
-          onClick={Toggle}
+          onClick={() => setOpen(open === true ? false : true)}
           fill="#49a6e9"
           width="50px"
           height="50px"
           viewBox="0 0 16 16"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <title>icn/menu</title>
           <path
